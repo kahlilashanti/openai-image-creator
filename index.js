@@ -1,3 +1,5 @@
+
+const path = require('path');
 const express = require('express');
 // const cors = require('cors');
 
@@ -13,6 +15,9 @@ const dotenv = require('dotenv').config();
 //allows us to pass json payloads from front end to back end
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+//set static folder for html and css
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 
